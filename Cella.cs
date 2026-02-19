@@ -34,7 +34,7 @@ namespace UveghazProjekt
 			{
 				return this.noveny == null;
 			}
-			
+
 		}
 
 		public bool Beultet(NovenyFaj noveny, int egyedSzam)
@@ -52,7 +52,7 @@ namespace UveghazProjekt
 			else if (noveny == this.noveny)
 			{
 				this.egyedSzam += egyedSzam;
-				if (this.egyedSzam> noveny.OptimalisSuruseg)
+				if (this.egyedSzam > noveny.OptimalisSuruseg)
 				{
 					this.noveny.EgeszsegiAllapot -= 2;
 				}
@@ -74,9 +74,17 @@ namespace UveghazProjekt
 			this.egyedSzam -= egyedSzam;
 			if (this.egyedSzam <= 0)
 			{
-				this.egyedSzam = 0;
-				this.noveny = null;
+				this.Urit();
 			}
 		}
+		public void Urit()
+		{
+
+			this.egyedSzam = 0;
+			this.noveny = null;
+		}
 	}
+
+
 }
+
